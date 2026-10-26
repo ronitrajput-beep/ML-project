@@ -1,0 +1,97 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage[T1]{fontenc}
+\usepackage[margin=20mm]{geometry}
+\usepackage{enumitem,booktabs,hyperref,fancyhdr}
+\hypersetup{hidelinks}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{6pt}
+\setlist{nosep,leftmargin=*}
+\pagestyle{fancy}\fancyhf{}\lhead{ML Project: You + Ronit}\rhead{Presentation guide}\cfoot{\thepage}
+\newcommand{\qa}[2]{\textbf{#1}\par #2\par}
+\begin{document}
+\begin{center}{\Large Explaining Our ML Project}\end{center}
+\section*{Page 1: Question, models and method}
+\textbf{Suggested split:} You explain this page. Ronit explains the findings on page 2. Both review the questions on page 3. Use these as speaking notes, not a script to memorize word for word.
+
+\subsection*{1. What is our research question?}
+\begin{quote}\itshape
+Ma'am, our project asks whether a fault-detection model can still work when an input measurement, such as speed or temperature, becomes unavailable. We also test whether training it with missing inputs helps it handle a different missing input later.
+\end{quote}
+
+\textbf{Example:} imagine a model that uses temperature, speed, torque and wear. If speed is missing, its predictions may change. We simulated this by removing input values from existing records. We did not collect new machine data or physically damage sensors.
+
+\subsection*{2. What data did we use?}
+\begin{itemize}
+\item \textbf{Scania APS:} real truck records, with 60,000 source records and a separate official test set of 16,000. There are 170 numerical inputs. Positive means a fault involving the APS component; negative means another component fault, not necessarily a healthy truck.
+\item \textbf{AI4I:} 10,000 synthetic maintenance records. Inputs include temperature, speed, torque, wear and product type. Synthetic means generated to resemble a maintenance problem, rather than collected directly from real equipment.
+\end{itemize}
+Faults are rare in both datasets, so the classes are imbalanced. Scania already contains missing values; our ``ordinary'' condition means no additional values were removed.
+
+\subsection*{3. What models did we use?}
+\begin{enumerate}
+\item \textbf{Logistic regression:} a simple baseline that combines inputs through a weighted linear score to classify the record.
+\item \textbf{Histogram gradient boosting (HGB):} many small decision trees built sequentially. Later trees improve the training objective using the current errors. It learns nonlinear relationships and can handle missing inputs.
+\item \textbf{Group-augmented HGB:} the same boosting algorithm, trained on additional copies with selected input groups removed. The difference is the training recipe, not a new tree algorithm.
+\end{enumerate}
+
+\subsection*{4. How did we experiment?}
+We separated \textbf{training} (learning), \textbf{validation} (choosing the decision threshold), and \textbf{testing} (final evaluation). We ranked input groups using training rows only. Three groups were used for targeted masking; two others were reserved to test transfer to different outages. We repeated the experiment with three fixed random seeds.
+
+\textbf{Simple flow:} split data $\rightarrow$ fit models $\rightarrow$ choose threshold on validation data $\rightarrow$ remove selected test inputs $\rightarrow$ compare predictions with known labels.
+
+\newpage
+\section*{Page 2: What we found and concluded}
+\subsection*{1. What exactly did we compare?}
+The grouped model saw four views of each training row: the original and three copies, each missing one selected group. Each view had one-quarter weight. During testing, we compared ordinary data, the three anticipated group outages, two different group outages, and random missing readings.
+
+We also used controls:
+\begin{itemize}
+\item \textbf{Random-cell masking:} remove individual input values randomly during training. This checks whether targeted group selection helps beyond generic corruption.
+\item \textbf{Clean repetition:} repeat clean training rows without masking, with the same quarter weights. This later, exploratory check tests whether representation counts alone can affect tree building.
+\end{itemize}
+
+\subsection*{2. What were the main results?}
+This table shows \textbf{mean positive-class F1 across ordinary data plus three anticipated outages}, averaged over three split runs. It is not ordinary-test accuracy.
+\begin{center}
+\begin{tabular}{lrr}\toprule
+Model & Scania & AI4I\\\midrule
+Standard HGB & 0.8359 & 0.5610\\
+Group-augmented HGB & 0.8435 & 0.6006\\\bottomrule
+\end{tabular}
+\end{center}
+\textbf{Meaning:} targeted masking improved this average, particularly on synthetic AI4I. The real Scania improvement was small, and its uncertainty interval included zero. We cannot confidently claim a reliable improvement on that real dataset.
+
+\textbf{The important failure:} when rotational speed was removed in an AI4I outage excluded from targeted training, standard HGB achieved \textbf{0.441 F1}, while Group-HGB achieved only \textbf{0.223}. Preparing for some outages did not protect the model against this different outage.
+
+\textbf{The controls weakened the improvement claim:} random-cell masking reached \textbf{0.582 F1} across the two untrained AI4I outages, compared with \textbf{0.404} for group masking. The exploratory clean-repeat control reached \textbf{0.614} on the anticipated-outage endpoint, above group masking's \textbf{0.601}. Therefore, we cannot credit the original gain specifically to targeted masking.
+
+\subsection*{3. What is our conclusion?}
+\begin{quote}\itshape
+Training with particular missing inputs can help in those conditions, but it does not guarantee protection against different missing inputs. We should test unseen outage patterns and fair controls before saying that an augmentation method is better.
+\end{quote}
+
+\textbf{What is our contribution?} The controlled comparison and the measured failure boundary. We separated training changes from threshold changes, tested different outages, and included alternative explanations for apparent gains. We have not established a new algorithm or worldwide novelty.
+
+\textbf{Closing line for Ronit:} ``Our results were mixed, and that is the finding. An improved score under familiar conditions was not enough evidence of better performance under other missing-input conditions.''
+
+\newpage
+\section*{Page 3: Short answers to Ma'am's questions}
+\small
+\setlength{\parskip}{3pt}
+\qa{Why this topic?}{Missing measurements are a practical concern in monitoring. We wanted to test reliability under unavailable inputs, rather than report only a high score on ordinary data. Our outages were simulated, so they are not proof of behavior on actual equipment.}
+\qa{Is this supervised learning or anomaly detection?}{Supervised binary classification. Both datasets have labels, and the models learn the positive versus negative class. We did not train an unsupervised anomaly detector.}
+\qa{Why not use accuracy alone?}{Always predicting the negative class gives 97.66\% accuracy on the Scania test set but catches zero APS faults. High accuracy can hide poor minority-class detection.}
+\qa{What are precision, recall and F1?}{Precision: of the records flagged as faults, how many really were positive? Recall: of all actual positive records, how many did we catch? F1 balances precision and recall. Accuracy is the fraction of all predictions that are correct.}
+\qa{What is a confusion matrix?}{It counts correct fault predictions (TP), false alarms (FP), missed faults (FN), and correct negative predictions (TN). It shows the kinds of mistakes behind an overall score.}
+\qa{What is a threshold?}{The model produces a score; the threshold is the cutoff for predicting a fault. We chose it using validation labels and froze it before testing. It is not chosen separately after seeing each test result.}
+\qa{Why use logistic regression and boosting?}{Logistic regression is a simple reference. Boosting is a stronger nonlinear model. Comparing boosting with its augmented version tests the training recipe while keeping the learner settings the same.}
+\qa{How did we handle missing values and imbalance?}{Logistic regression used training-median imputation, scaling and missingness indicators. HGB handles NaNs natively. Balanced class weights gave more importance to rare positives during training; test labels were not balanced or changed.}
+\qa{Did we use a neural network or GPU?}{No. We used scikit-learn models on CPU. Every HGB configuration used 160 boosting rounds with small trees. A large neural network was not necessary for this experiment.}
+\qa{How many models were trained?}{Three main model families. Four training configurations, including the random-cell control, across two datasets and three seeds gave 24 saved models. Six later clean-repeat fits brought the total to 30. These are not 30 different algorithms.}
+\qa{Why three seeds? What is overfitting here?}{Repeating split/random choices shows some run-to-run variation. A possible concern is learning to handle the particular outage patterns used during development without handling other patterns. Our transfer test checks that concern; it does not prove a single mechanism caused every failure.}
+\qa{What are the limitations and future work?}{Only one real and one synthetic dataset, simulated outages, anonymized Scania groups and limited repetitions. Future work should use more real datasets, known sensor groups and actual outage records. F1 improvement also does not guarantee lower maintenance cost.}
+\qa{Does this predict when a machine will fail?}{No. It classifies recorded conditions. We did not demonstrate remaining useful life or advance warning time.}
+\qa{Did you write all the code yourself?}{Answer honestly: ``We used AI assistance for implementation and drafting. We are studying the methodology and checking the outputs so we can explain the work.'' Do not claim coding or verification you have not personally done.}
+
+\textbf{Remember:} explain the question, the fair comparison, the improvement, and the failure. You do not need to memorize every code line or every reported number.
+\end{document}
