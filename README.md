@@ -2,6 +2,8 @@
 
 A completed, reproducible course research study of **fault classification when input channels disappear**. The manuscript uses the IEEE two-column class and contains Abstract, Introduction, Literature Review, Experimental Setup, Proposed Methodology, Results and Analysis, Conclusion, Discussion, and References.
 
+**Presentation preparation:** [Simple speaking guide for you and Ronit (PDF)](presentation/explain_to_maam.pdf)
+
 **Read the paper:** [PDF](paper/main.pdf) · [LaTeX source](paper/main.tex) · [Full-text literature notes](literature/REVIEW_NOTES.md)
 
 ## What was measured

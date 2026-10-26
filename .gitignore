@@ -11,3 +11,7 @@ literature/pdfs/
 literature/texts/
 paper/build_pass*.txt
 paper/build_bibtex.txt
+
+presentation/*.aux
+presentation/*.log
+presentation/*.out

@@ -1,0 +1,203 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[margin=19mm]{geometry}
+\usepackage{enumitem,booktabs,tabularx,amsmath,xcolor,hyperref,fancyhdr}
+\hypersetup{colorlinks=true,urlcolor=blue,linkcolor=black}
+\setlist{nosep,leftmargin=*}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{7pt}
+\pagestyle{fancy}\fancyhf{}\lhead{ML project: presentation guide}\rhead{You + Ronit}\cfoot{\thepage}
+\newcommand{\say}[1]{\begin{quote}\itshape #1\end{quote}}
+\newcommand{\qa}[2]{\textbf{#1}\par #2\par}
+\begin{document}
+\begin{center}
+{\LARGE Explaining Our ML Experiment}\\[5pt]
+{\large A simple guide for you and Ronit}\\[4pt]
+26 October 2026
+\end{center}
+\section*{1. Understand this page first}
+\textbf{Our topic: fault classification when measurements are missing.}
+
+A classifier reads measurements and decides whether a record belongs to the fault class. We asked whether it still works when an input channel disappears, and whether training with missing inputs helps.
+
+\textbf{Example:} a model uses temperature, speed, torque and wear. We remove one measurement from the test records and check whether it can still identify faults. This is a computer simulation of unavailable inputs. We did not damage equipment or collect new machine data.
+
+\textbf{Our research question}
+\say{Does training on missing measurements improve fault detection, and does that improvement survive a different missing measurement that we did not specifically train for?}
+
+\textbf{The experiment in five sentences}
+\begin{enumerate}
+\item We used two existing public datasets: real Scania truck records and a synthetic maintenance dataset called AI4I.
+\item We compared logistic regression, standard gradient boosting, and the same boosting model trained with selected input groups removed from training copies.
+\item We kept training, validation and test rows separate. Validation chose the alarm threshold; test data measured the final performance.
+\item We tested ordinary data, anticipated outages, different outages excluded from targeted training, and random missing readings.
+\item Targeted masking sometimes helped, but did not reliably protect against other outages. Extra controls showed that the apparent improvement was not sufficient evidence of a better masking method.
+\end{enumerate}
+
+\textbf{What you can claim:} an original, reproducible comparison with a useful failure finding.
+
+\textbf{What you cannot claim:} a new algorithm, the world's first study of missing features, a universal improvement, or prediction of how many days remain before failure.
+
+\textbf{Suggested speaking split:} You explain the problem, datasets and models. Ronit explains the experiment, results and conclusion. Both should understand the results and basic questions on pages 5--6. The scripts below are practice wording; use your own words.
+
+\newpage
+\section*{2. Your speaking part: problem, data and models}
+\subsection*{Opening: about 30 seconds}
+\say{Ma'am, our project studies fault classification when some input measurements are unavailable. A model can get high accuracy on ordinary test data but still miss faults when an important measurement disappears. We investigated whether adding missing-input examples during training improves this situation, especially for an outage that was not included in targeted training.}
+
+\subsection*{The two datasets}
+\say{Our main dataset is APS Failure at Scania Trucks. It has 60,000 source records and a separate official test set of 16,000 records. There are 170 numerical inputs. Only 1,000 source records and 375 test records belong to the positive class, so the task is imbalanced. Positive means an APS component fault; negative means a different component fault, not necessarily a healthy truck.}
+
+\say{Our second dataset is AI4I. It has 10,000 synthetic records, including 339 machine failures. It provides temperature, speed, torque, wear and product type. It lets us explain individual missing measurements more easily, but findings on synthetic data cannot automatically be generalized to real machines.}
+
+\textbf{Important:} APS already has missing values. In the paper, ``clean'' means the original test table without additional masking, not that every APS value is present.
+
+\subsection*{The three main models}
+\begin{enumerate}
+\item \textbf{Logistic regression.} A simple reference model. It combines inputs through a weighted linear score and converts that score into a binary-class score. It is not linear regression and does not predict a numerical failure time.
+\item \textbf{Histogram gradient boosting, or HGB.} It builds small decision trees one after another. Later trees improve the training objective using information from the current errors. It handles nonlinear relationships and missing inputs. ``Histogram'' means numerical values are grouped into bins to speed up split finding.
+\item \textbf{Group-augmented HGB.} The same boosting algorithm, with different training data. We add copies with selected measurement groups replaced by missing values. We are testing a training recipe, not inventing another tree algorithm.
+\end{enumerate}
+
+\say{We chose a simple linear reference and a stronger nonlinear model. Then we changed the stronger model's training data to test the specific effect of missing-input exposure. All boosting variants used the same learner settings.}
+
+\textbf{Hand over to Ronit:} ``Ronit will explain how we kept the comparison fair and what the experiments showed.''
+
+\newpage
+\section*{3. Ronit's speaking part: how we experimented}
+\subsection*{Step 1: separate the data}
+\say{For Scania, we kept the official 16,000-record test set untouched and split the source data into 48,000 training and 12,000 validation records. For AI4I, we used 6,000 training, 2,000 validation and 2,000 test records. We repeated the process with three fixed random seeds to check whether the results depended on one split. The Scania test rows stayed the same across those runs.}
+
+\textbf{Training} teaches the model. \textbf{Validation} helps choose settings such as the alarm threshold. \textbf{Testing} checks the final fitted model on held-out rows. Test labels did not choose the threshold.
+
+\subsection*{Step 2: decide which input groups to remove}
+\say{Using training data only, we ranked measurement groups by a simple difference between the fault and non-fault classes. We used the top three groups as anticipated outages. The fourth and fifth groups were excluded from deliberate group masking and threshold selection, so they tested transfer to different outages.}
+
+For AI4I, each numerical measurement is a group. APS names are anonymized; columns sharing a prefix form a group. Those groups are proxies for measurement variables, not confirmed physical sensor units.
+
+\subsection*{Step 3: make training copies}
+\say{For the group-augmented model, every training row had four views: the original row and three copies, each missing one selected group. Every view had one-quarter weight, so copying did not multiply that record's total training weight. The model learns to classify both ordinary and deliberately incomplete inputs.}
+
+\textbf{Simple flow:}\par
+Training rows $\rightarrow$ rank groups $\rightarrow$ create masked copies $\rightarrow$ fit HGB\par
+Validation rows $\rightarrow$ choose threshold $\rightarrow$ freeze the decision rule\par
+Held-out test rows $\rightarrow$ remove inputs $\rightarrow$ predict $\rightarrow$ compare with labels
+
+\subsection*{Step 4: choose the threshold and evaluate}
+\say{The model outputs a score. A threshold turns it into fault or non-fault. We compared choosing that threshold on ordinary validation data with choosing it across ordinary data plus the three anticipated outages. Then we froze it before testing. Moving a threshold can change F1 without changing the fitted model.}
+
+We evaluated eight conditions: original data, five separate group outages, and random cell removal at 10\% and 30\%. All models shared the same test rows and masks within each split. There was no adaptation or retraining on test labels.
+
+\newpage
+\section*{4. Ronit's speaking part: results and conclusion}
+\subsection*{First, show ordinary Scania performance}
+These are means over three split runs on the original Scania test table. All four metric columns are percentages.
+\begin{center}\small
+\begin{tabular}{lrrrr}\toprule
+Model & Accuracy & Precision & Recall & F1\\\midrule
+Logistic regression & 98.84 & 76.14 & 75.47 & 75.41\\
+Standard HGB & 99.28 & 87.91 & 80.36 & 83.88\\
+Group-augmented HGB & 99.30 & 88.63 & 80.62 & 84.36\\\bottomrule
+\end{tabular}
+\end{center}
+\say{The grouped model performed slightly better on these thresholded metrics, but the difference was small. We did not treat that small increase as proof that our approach is universally better.}
+
+\subsection*{Then explain the actual outage experiment}
+\begin{center}\small
+\begin{tabular}{lrr}\toprule
+Mean F1: ordinary + three anticipated outages & Scania & AI4I\\\midrule
+Standard HGB & 0.8359 & 0.5610\\
+Group-augmented HGB & 0.8435 & 0.6006\\\bottomrule
+\end{tabular}
+\end{center}
+These are different summaries from the clean-test table above. Do not mix them.
+
+\say{Targeted masking improved the anticipated-outage average, especially on synthetic AI4I. On real Scania data, the gain was small and the uncertainty interval included zero, so we could not establish a reliable improvement.}
+
+\textbf{The strongest failure example:} when rotational speed was removed in an untrained AI4I outage, standard HGB had F1 \textbf{0.441}, while Group-HGB had \textbf{0.223}. Targeted training did not protect against that different outage.
+
+\textbf{Why the controls matter:}
+\begin{itemize}
+\item Random-cell masking reached \textbf{0.582} F1 across the two untrained AI4I outages, versus \textbf{0.404} for targeted group masking.
+\item A later, explicitly exploratory clean-repeat control reached \textbf{0.614} on AI4I's anticipated-outage endpoint, versus \textbf{0.601} for group masking. Just repeating clean rows can affect tree-building constraints, even with quarter weights. We therefore cannot attribute the original gain specifically to targeted masking.
+\end{itemize}
+
+\textbf{Closing statement}
+\say{Our conclusion is that doing better on the outages used during development does not establish protection against different outages. We need held-out outage patterns, fair controls and minority-class metrics before recommending this training recipe. Our contribution is the controlled evaluation and failure analysis, not a new algorithm.}
+
+\newpage
+\section*{5. Basic questions Ma'am may ask}
+\qa{What is a feature? What is a label?}{A feature is an input, such as torque. A label is the known answer used for learning or evaluation, such as whether a record is in the fault class.}
+\qa{Is this supervised learning?}{Yes. Both datasets have labels, and the models learn to classify those labels. This is not an unsupervised anomaly detector.}
+\qa{What is class imbalance?}{One class has many more examples. In Scania's source data, only 1,000 of 60,000 records are positive. A classifier can get high accuracy by mostly predicting the common class.}
+\qa{Why is accuracy not enough?}{Always predicting the negative class gives 97.66\% accuracy on the Scania test set, but detects zero APS faults. We therefore also examine recall, precision and F1 for the positive class.}
+\qa{What do precision and recall mean?}{Precision asks: of the records flagged as faults, how many really were positive? Recall asks: of all actual positive records, how many did we catch? F1 balances these two measures.}
+\qa{What is a confusion matrix?}{A count of four outcomes: correct fault predictions (TP), false alarms (FP), missed faults (FN), and correct negative predictions (TN). A missed APS fault is FN, even if overall accuracy remains high.}
+\qa{What are the formulas?}{Accuracy $=(TP+TN)/N$; precision $=TP/(TP+FP)$; recall $=TP/(TP+FN)$; F1 $=2PR/(P+R)$. Macro F1 averages both class F1 scores equally; weighted F1 weights them by class size.}
+\qa{What is a decision tree? Why boosting?}{A tree uses a sequence of feature-based splits. Boosting combines many small trees built sequentially, allowing nonlinear relationships without requiring a large neural network. Our HGB uses 160 boosting rounds and at most 15 leaves per tree.}
+\qa{Did we use a neural network or GPU?}{No. The study uses scikit-learn models on CPU. The original 24 fits took about 89 seconds of fitting on the cloud machine, excluding downloads, evaluation and analysis. Another computer may take longer.}
+\qa{How did we handle missing values and imbalance?}{Logistic regression used training-median imputation, scaling and missingness indicators. HGB handles NaNs natively. Balanced class weights gave more importance to rare positive examples during training. We did not balance or alter test labels.}
+\qa{What is data augmentation here?}{Additional views of existing training examples with selected inputs missing. It does not create new independent observations or new fault labels.}
+
+\newpage
+\begingroup\small
+\section*{6. Questions about research quality and novelty}
+\qa{What is our research gap?}{A narrow practical question: do inexpensive targeted missing-input training gains survive threshold controls and transfer to outage groups excluded from development, on imbalanced maintenance data? We are not claiming that missingness shift itself is unexplored.}
+\qa{What is original about this work?}{Our particular controlled comparison, saved predictions, and observed failure boundary. We separated training changes from threshold changes, included random-cell masking, and checked different outage identities. Global algorithmic novelty has not been established.}
+\qa{What if Ma'am asks, ``Did your proposed model work?''}{It improved some anticipated-outage averages, but did not consistently transfer. The real-data gain was uncertain and the extra controls did not establish a mask-specific advantage. That mixed outcome is our finding.}
+\qa{Why run the extra controls?}{A control tests another explanation for a result. Random-cell masking tests whether targeted group selection helps beyond generic corruption. Clean repetition checks whether representation counts alone can change a tree model. The latter was added after the initial results and is marked exploratory.}
+\qa{How many models did we train?}{There are three main model families. The fixed study fitted four configurations, including the random-cell control, on two datasets and three split seeds: $4\times2\times3=24$ saved models. Six exploratory clean-repeat fits bring the saved total to 30. These are not 30 different algorithms.}
+\qa{What do three seeds and an interval mean?}{Seeds repeat the split/random choices so we can see variation. The interval expresses conditional uncertainty from resampling test rows. Scania's primary gain interval crosses zero, so this experiment does not establish a reliable improvement. Three seeds are not three independent datasets.}
+\qa{Could better F1 still be worse in practice?}{Yes. Scania's supplied cost heavily penalizes missed faults. F1-selected thresholds gave higher diagnostic cost than the 0.5 threshold in our runs. The metric must match the real decision's costs.}
+\qa{Does this predict future machine failure?}{No. It classifies recorded conditions. We did not demonstrate failure lead time, remaining useful life, or prospective validation on equipment.}
+\qa{What are the main limitations?}{One real and one synthetic dataset; simulated outages; anonymized Scania groups and correlated counters; limited split repetitions; no broad hyperparameter search; no independently verified worldwide novelty claim.}
+\qa{What literature did we use?}{Ten full-text sources from 2020--2025, including Domain Adaptation under Missingness Shift (2023), TabFSBench (2025), and Prediction Models That Learn to Avoid Missing Values (2025). They establish that missingness shift and feature-loss evaluation already exist. Source links and page notes are in the repository.}
+\qa{What if Ma'am asks who wrote the code?}{Answer honestly: ``We used AI assistance for implementation and drafting. Our responsibility is to understand the experiment, check the outputs and explain the limitations.'' Do not claim manual coding or personal verification you have not done.}
+
+\endgroup
+\newpage
+\section*{7. A small demo and a final rehearsal}
+\subsection*{Demo option: show the existing evidence}
+Open the paper's architecture diagram, the ordinary Scania result table, and the outage F1 graph. Explain the unseen AI4I speed failure. These explain the study better than scrolling through code.
+
+Useful repository files:
+\begin{itemize}
+\item \texttt{paper/main.pdf}: research manuscript.
+\item \texttt{paper/figures/outage\_f1.png}: performance across outage conditions.
+\item \texttt{results/summary.csv}: per-condition means and split variation.
+\item \texttt{results/primary\_summary.csv}: anticipated-outage averages.
+\item \texttt{results/exploratory\_clean\_repeat.csv}: later clean-copy control.
+\item \texttt{docs/PROTOCOL.md}: fixed original procedure.
+\end{itemize}
+
+\subsection*{Optional live prediction on your Mac}
+Activate the virtual environment from the project folder. If the earlier download failed with a certificate error, use the trusted certificate-bundle fix first:
+\begin{verbatim}
+python -m pip install --upgrade certifi
+SSL_CERT_FILE="$(python -m certifi)" python scripts/download_data.py
+\end{verbatim}
+Then run this command as one line:
+\begin{flushleft}\ttfamily\footnotesize\raggedright
+python scripts/infer.py --artifact models/aps\_11\_group\_hgb.joblib --csv data/aps\_test.csv --policy environment --output predictions.csv
+\end{flushleft}
+It should produce 16,000 predictions using a previously trained model. A live prediction is \textbf{inference}, not retraining or reproduction of all experiments.
+
+In \texttt{predictions.csv}, explain: \texttt{row} is the input-row number, \texttt{fault\_score} is the model score, \texttt{threshold} is the fixed cutoff, and \texttt{predicted\_fault} is the output class. A score of 0.8 does not establish an 80\% real-world probability of failure. This file contains one model run; the paper's means aggregate three runs.
+
+\subsection*{Rehearse these without reading}
+\begin{enumerate}
+\item Explain our question in one sentence.
+\item Name the three principal models and explain how the third differs from the second.
+\item Explain training versus validation versus testing.
+\item Explain why 97.66\% accuracy can still mean zero useful fault detection.
+\item State one improvement and one important failure, with the correct test condition.
+\item Explain why the clean-repeat control weakened the claim about masking.
+\item State our contribution and one limitation without calling the algorithm new.
+\end{enumerate}
+
+\textbf{One sentence to remember:}
+\say{Training for particular missing inputs does not prove that a fault classifier will handle different missing inputs; our controls show why that distinction matters.}
+
+\textbf{Repository:} \url{https://github.com/ronitrajput-beep/ML-project}
+\end{document}
