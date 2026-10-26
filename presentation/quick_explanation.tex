@@ -1,0 +1,47 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage[T1]{fontenc}
+\usepackage[margin=20mm]{geometry}
+\usepackage{enumitem,hyperref}
+\hypersetup{hidelinks}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{6pt}
+\setlist{nosep,leftmargin=*}
+\pagestyle{empty}
+\begin{document}
+\begin{center}\Large Our ML Project: Quick Explanation\end{center}
+
+\textbf{1. What is our research question?}
+
+If a machine-fault model loses an input, such as speed or temperature, can it still detect faults? Does training it with missing inputs help it handle a different missing input later?
+
+\textbf{2. What models and methodology did we use?}
+
+We used two public datasets: real Scania truck fault records and synthetic AI4I machine records. We compared:
+\begin{itemize}
+\item \textbf{Logistic regression:} a simple model combining inputs through a weighted linear score.
+\item \textbf{Gradient boosting:} small decision trees built one after another to improve predictions.
+\item \textbf{Group-augmented boosting:} the same boosting model, trained on extra copies with selected measurements removed.
+\end{itemize}
+
+We separated training, validation and testing. We selected the decision threshold on validation data, then tested ordinary inputs, missing inputs used during development, and different missing inputs excluded from targeted training. We repeated the experiment with three fixed random seeds.
+
+\textbf{3. What did we find?}
+
+Targeted masking helped on some anticipated outages. On AI4I, mean F1 across ordinary data and three anticipated outages rose from \textbf{0.561 to 0.601}. The real Scania improvement was small and uncertain.
+
+However, when an untrained AI4I speed-input outage was tested, F1 dropped to \textbf{0.223}, compared with \textbf{0.441} for standard boosting. Random masking transferred better to different outages. An extra clean-copy control also showed that the original gain could not be credited specifically to targeted masking.
+
+\textbf{4. What is our conclusion?}
+
+Training for particular missing measurements does not guarantee protection against other missing measurements. We must test different outage patterns and fair controls before calling a model better. Our contribution is this experimental comparison, not a new ML algorithm.
+
+\hrule
+\vspace{4pt}
+\textbf{Quick answers if Ma'am asks}
+\begin{itemize}
+\item \textbf{Why F1, not just accuracy?} Faults are rare. High accuracy can hide many missed faults. Precision measures false-alarm quality; recall measures how many actual faults we catch. F1 balances them.
+\item \textbf{What is a threshold?} The score cutoff for predicting a fault. Validation chooses it; test labels do not.
+\item \textbf{Is this future-failure prediction?} No. It classifies recorded conditions; it does not predict when a machine will fail.
+\item \textbf{Did our model always win?} No. It helped in some conditions and failed to transfer in others. That is the finding.
+\end{itemize}
+\end{document}
