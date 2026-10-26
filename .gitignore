@@ -1,0 +1,13 @@
+__pycache__/
+*.pyc
+.venv/
+data/*.csv
+paper/*.aux
+paper/*.log
+paper/*.out
+paper/*.bbl
+paper/*.blg
+literature/pdfs/
+literature/texts/
+paper/build_pass*.txt
+paper/build_bibtex.txt

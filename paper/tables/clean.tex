@@ -1,0 +1,12 @@
+\begin{table*}[t]
+\centering\caption{Clean-test classification results, mean over three fixed split seeds. Metrics are percentages except AP, which is on $[0,1]$. These are our runs, not cross-paper comparisons.}
+\label{tab:clean}\small
+\begin{tabular}{llrrrrrrr}\hline
+Dataset & Model & Accuracy & Precision & Recall & $F_1$ & Macro $F_1$ & Weighted $F_1$ & AP\\\hline
+APS & Logistic & 98.84 & 76.14 & 75.47 & 75.41 & 87.41 & 98.84 & 0.828\\
+APS & HGB & 99.28 & 87.91 & 80.36 & 83.88 & 91.75 & 99.26 & 0.916\\
+APS & Group-HGB & 99.30 & 88.63 & 80.62 & 84.36 & 92.00 & 99.28 & 0.912\\
+AI4I & Logistic & 93.98 & 18.04 & 21.57 & 19.61 & 58.24 & 94.25 & 0.159\\
+AI4I & HGB & 97.63 & 66.96 & 66.18 & 65.76 & 82.27 & 97.65 & 0.759\\
+AI4I & Group-HGB & 98.13 & 77.80 & 64.22 & 70.08 & 84.56 & 98.05 & 0.734\\
+\hline\end{tabular}\end{table*}

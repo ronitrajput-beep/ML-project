@@ -1,0 +1,5 @@
+dataset,seed,model,fit_seconds,artifact_bytes
+aps,29,logistic,8.330168303997198,9912
+aps,29,hgb,2.533470763999503,209218
+aps,29,group_hgb,8.627221492999524,209884
+aps,29,cell_hgb,8.410974282000097,211466

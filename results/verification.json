@@ -1,0 +1,8 @@
+{
+  "metric_rows_recomputed": 576,
+  "exploratory_repeat_metric_rows_recomputed": 144,
+  "exploratory_repeat_models_prediction_checked": 6,
+  "saved_models_reloaded_and_prediction_checked": 24,
+  "split_and_protocol_checks": "passed",
+  "protocol_sha256": "44117f2480e6da50d9ad075d7fa5ea11550beff2936213edd27561b72babb273"
+}

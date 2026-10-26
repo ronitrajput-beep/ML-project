@@ -1,0 +1,56 @@
+mkdir -p failed for path /home/agent/.config/matplotlib: [Errno 30] Read-only file system: '/home/agent/.config/matplotlib'
+Matplotlib created a temporary cache directory at /tmp/matplotlib-cnx5qwcd because there was an issue with the default path (/home/agent/.config/matplotlib); it is highly recommended to set the MPLCONFIGDIR environment variable to a writable directory, in particular to speed up the import of Matplotlib and to better support multiprocessing.
+START aps seed=11 model=logistic
+DONE {"dataset": "aps", "seed": 11, "model": "logistic", "fit_seconds": 9.01819168500515, "artifact_bytes": 9898} thresholds {'clean': 0.93, 'environment': 0.97, 'default': 0.5}
+START aps seed=11 model=hgb
+DONE {"dataset": "aps", "seed": 11, "model": "hgb", "fit_seconds": 2.7835915429968736, "artifact_bytes": 209583} thresholds {'clean': 0.88, 'environment': 0.88, 'default': 0.5}
+START aps seed=11 model=group_hgb
+DONE {"dataset": "aps", "seed": 11, "model": "group_hgb", "fit_seconds": 8.454527909001627, "artifact_bytes": 209826} thresholds {'clean': 0.89, 'environment': 0.89, 'default': 0.5}
+START aps seed=11 model=cell_hgb
+DONE {"dataset": "aps", "seed": 11, "model": "cell_hgb", "fit_seconds": 8.685453509999206, "artifact_bytes": 210879} thresholds {'clean': 0.905, 'environment': 0.905, 'default': 0.5}
+SPLIT_FINISHED aps 11 seconds 35.07604622840881
+START aps seed=29 model=logistic
+DONE {"dataset": "aps", "seed": 29, "model": "logistic", "fit_seconds": 8.330168303997198, "artifact_bytes": 9912} thresholds {'clean': 0.985, 'environment': 0.985, 'default': 0.5}
+START aps seed=29 model=hgb
+DONE {"dataset": "aps", "seed": 29, "model": "hgb", "fit_seconds": 2.533470763999503, "artifact_bytes": 209218} thresholds {'clean': 0.86, 'environment': 0.86, 'default': 0.5}
+START aps seed=29 model=group_hgb
+DONE {"dataset": "aps", "seed": 29, "model": "group_hgb", "fit_seconds": 8.627221492999524, "artifact_bytes": 209884} thresholds {'clean': 0.855, 'environment': 0.855, 'default': 0.5}
+START aps seed=29 model=cell_hgb
+DONE {"dataset": "aps", "seed": 29, "model": "cell_hgb", "fit_seconds": 8.410974282000097, "artifact_bytes": 211466} thresholds {'clean': 0.89, 'environment': 0.8350000000000001, 'default': 0.5}
+SPLIT_FINISHED aps 29 seconds 33.615424156188965
+START aps seed=47 model=logistic
+DONE {"dataset": "aps", "seed": 47, "model": "logistic", "fit_seconds": 9.105360475005, "artifact_bytes": 9911} thresholds {'clean': 0.98, 'environment': 0.98, 'default': 0.5}
+START aps seed=47 model=hgb
+DONE {"dataset": "aps", "seed": 47, "model": "hgb", "fit_seconds": 2.507547909001005, "artifact_bytes": 209949} thresholds {'clean': 0.9450000000000001, 'environment': 0.9450000000000001, 'default': 0.5}
+START aps seed=47 model=group_hgb
+DONE {"dataset": "aps", "seed": 47, "model": "group_hgb", "fit_seconds": 9.04708695399313, "artifact_bytes": 210239} thresholds {'clean': 0.9400000000000001, 'environment': 0.9400000000000001, 'default': 0.5}
+START aps seed=47 model=cell_hgb
+DONE {"dataset": "aps", "seed": 47, "model": "cell_hgb", "fit_seconds": 8.716003130997706, "artifact_bytes": 211654} thresholds {'clean': 0.9550000000000001, 'environment': 0.935, 'default': 0.5}
+SPLIT_FINISHED aps 47 seconds 35.18208074569702
+START ai4i seed=11 model=logistic
+DONE {"dataset": "ai4i", "seed": 11, "model": "logistic", "fit_seconds": 0.040441630997520406, "artifact_bytes": 1976} thresholds {'clean': 0.76, 'environment': 0.77, 'default': 0.5}
+START ai4i seed=11 model=hgb
+DONE {"dataset": "ai4i", "seed": 11, "model": "hgb", "fit_seconds": 0.20542895200196654, "artifact_bytes": 104315} thresholds {'clean': 0.8300000000000001, 'environment': 0.8300000000000001, 'default': 0.5}
+START ai4i seed=11 model=group_hgb
+DONE {"dataset": "ai4i", "seed": 11, "model": "group_hgb", "fit_seconds": 0.36866610000288347, "artifact_bytes": 111260} thresholds {'clean': 0.9, 'environment': 0.86, 'default': 0.5}
+START ai4i seed=11 model=cell_hgb
+DONE {"dataset": "ai4i", "seed": 11, "model": "cell_hgb", "fit_seconds": 0.3698221469967393, "artifact_bytes": 112683} thresholds {'clean': 0.805, 'environment': 0.845, 'default': 0.5}
+SPLIT_FINISHED ai4i 11 seconds 2.405566453933716
+START ai4i seed=29 model=logistic
+DONE {"dataset": "ai4i", "seed": 29, "model": "logistic", "fit_seconds": 0.012679138999374118, "artifact_bytes": 1958} thresholds {'clean': 0.8, 'environment': 0.8, 'default': 0.5}
+START ai4i seed=29 model=hgb
+DONE {"dataset": "ai4i", "seed": 29, "model": "hgb", "fit_seconds": 0.21537279199401382, "artifact_bytes": 105580} thresholds {'clean': 0.865, 'environment': 0.615, 'default': 0.5}
+START ai4i seed=29 model=group_hgb
+DONE {"dataset": "ai4i", "seed": 29, "model": "group_hgb", "fit_seconds": 0.2529191100038588, "artifact_bytes": 111970} thresholds {'clean': 0.805, 'environment': 0.865, 'default': 0.5}
+START ai4i seed=29 model=cell_hgb
+DONE {"dataset": "ai4i", "seed": 29, "model": "cell_hgb", "fit_seconds": 0.293499786996108, "artifact_bytes": 112424} thresholds {'clean': 0.77, 'environment': 0.86, 'default': 0.5}
+SPLIT_FINISHED ai4i 29 seconds 2.30521297454834
+START ai4i seed=47 model=logistic
+DONE {"dataset": "ai4i", "seed": 47, "model": "logistic", "fit_seconds": 0.013609449997602496, "artifact_bytes": 1974} thresholds {'clean': 0.76, 'environment': 0.79, 'default': 0.5}
+START ai4i seed=47 model=hgb
+DONE {"dataset": "ai4i", "seed": 47, "model": "hgb", "fit_seconds": 0.1533923169990885, "artifact_bytes": 106313} thresholds {'clean': 0.77, 'environment': 0.67, 'default': 0.5}
+START ai4i seed=47 model=group_hgb
+DONE {"dataset": "ai4i", "seed": 47, "model": "group_hgb", "fit_seconds": 0.21994019400153775, "artifact_bytes": 110968} thresholds {'clean': 0.895, 'environment': 0.865, 'default': 0.5}
+START ai4i seed=47 model=cell_hgb
+DONE {"dataset": "ai4i", "seed": 47, "model": "cell_hgb", "fit_seconds": 0.3105999370018253, "artifact_bytes": 113791} thresholds {'clean': 0.845, 'environment': 0.845, 'default': 0.5}
+SPLIT_FINISHED ai4i 47 seconds 2.070542573928833

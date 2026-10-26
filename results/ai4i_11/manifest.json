@@ -1,0 +1,47 @@
+{
+  "dataset": "ai4i",
+  "seed": 11,
+  "train_rows": 6000,
+  "validation_rows": 2000,
+  "test_rows": 2000,
+  "train_positive": 203,
+  "validation_positive": 68,
+  "test_positive": 68,
+  "features": [
+    "Air temperature [K]",
+    "Process temperature [K]",
+    "Rotational speed [rpm]",
+    "Torque [Nm]",
+    "Tool wear [min]",
+    "Type_L",
+    "Type_M",
+    "Type_H"
+  ],
+  "groups": {
+    "Air temperature [K]": [
+      0
+    ],
+    "Process temperature [K]": [
+      1
+    ],
+    "Rotational speed [rpm]": [
+      2
+    ],
+    "Torque [Nm]": [
+      3
+    ],
+    "Tool wear [min]": [
+      4
+    ]
+  },
+  "ranking": [
+    "Torque [Nm]",
+    "Tool wear [min]",
+    "Air temperature [K]",
+    "Rotational speed [rpm]",
+    "Process temperature [K]"
+  ],
+  "train_missing_fraction": 0.0,
+  "test_missing_fraction": 0.0,
+  "protocol_sha256": "44117f2480e6da50d9ad075d7fa5ea11550beff2936213edd27561b72babb273"
+}

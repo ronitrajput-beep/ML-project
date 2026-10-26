@@ -1,0 +1,84 @@
+Fontconfig error: No writable cache directories
+PRIMARY:
+                               f1_mean  f1_std  recall_mean  precision_mean
+dataset model     policy                                                   
+ai4i    cell_hgb  clean         0.5860  0.0124       0.6078          0.5758
+                  default       0.4905  0.0166       0.7708          0.3651
+                  environment   0.5980  0.0041       0.5686          0.6417
+        group_hgb clean         0.6036  0.0151       0.5686          0.6578
+                  default       0.4846  0.0136       0.8039          0.3517
+                  environment   0.6006  0.0166       0.5735          0.6434
+        hgb       clean         0.5610  0.0205       0.5049          0.6651
+                  default       0.5419  0.0207       0.6238          0.4894
+                  environment   0.5655  0.0244       0.5527          0.5945
+        logistic  clean         0.1393  0.0125       0.1863          0.1215
+                  default       0.0948  0.0049       0.5245          0.0521
+        majority  default       0.0000  0.0000       0.0000          0.0000
+aps     cell_hgb  clean         0.8328  0.0197       0.7787          0.8991
+                  default       0.7806  0.0150       0.8960          0.6921
+                  environment   0.8392  0.0117       0.8036          0.8809
+        group_hgb clean         0.8435  0.0076       0.8060          0.8863
+                  default       0.7835  0.0075       0.9031          0.6918
+                  environment   0.8435  0.0076       0.8060          0.8863
+        hgb       clean         0.8359  0.0137       0.7909          0.8896
+                  default       0.7816  0.0125       0.8960          0.6937
+                  environment   0.8359  0.0137       0.7909          0.8896
+        logistic  clean         0.6593  0.0184       0.6551          0.6844
+                  default       0.4774  0.0236       0.9000          0.3316
+        majority  default       0.0000  0.0000       0.0000          0.0000
+BOOTSTRAP [
+  {
+    "dataset": "aps",
+    "comparison": "[('group_hgb', 'environment'), ('hgb', 'clean')]",
+    "estimate": 0.007623243360496246,
+    "lower": -0.000993654853217099,
+    "upper": 0.016562384910668825,
+    "bootstrap_replicates": 1000,
+    "scope": "conditional row sampling; APS seed-averaged; AI4I seed 11 only"
+  },
+  {
+    "dataset": "aps",
+    "comparison": "[('group_hgb', 'environment'), ('cell_hgb', 'environment')]",
+    "estimate": 0.004269244465927691,
+    "lower": -0.004965453517627477,
+    "upper": 0.01319952632905718,
+    "bootstrap_replicates": 1000,
+    "scope": "conditional row sampling; APS seed-averaged; AI4I seed 11 only"
+  },
+  {
+    "dataset": "aps",
+    "comparison": "[('group_hgb', 'environment'), ('group_hgb', 'clean')]",
+    "estimate": 0.0,
+    "lower": 0.0,
+    "upper": 0.0,
+    "bootstrap_replicates": 1000,
+    "scope": "conditional row sampling; APS seed-averaged; AI4I seed 11 only"
+  },
+  {
+    "dataset": "ai4i",
+    "comparison": "[('group_hgb', 'environment'), ('hgb', 'clean')]",
+    "estimate": 0.08008626633733906,
+    "lower": 0.017800718825021187,
+    "upper": 0.14447374611143748,
+    "bootstrap_replicates": 1000,
+    "scope": "conditional row sampling; APS seed-averaged; AI4I seed 11 only"
+  },
+  {
+    "dataset": "ai4i",
+    "comparison": "[('group_hgb', 'environment'), ('cell_hgb', 'environment')]",
+    "estimate": 0.02413762277716547,
+    "lower": -0.013220593345596358,
+    "upper": 0.0650330607867576,
+    "bootstrap_replicates": 1000,
+    "scope": "conditional row sampling; APS seed-averaged; AI4I seed 11 only"
+  },
+  {
+    "dataset": "ai4i",
+    "comparison": "[('group_hgb', 'environment'), ('group_hgb', 'clean')]",
+    "estimate": -0.002966662800375608,
+    "lower": -0.026078170233356596,
+    "upper": 0.024982208552768108,
+    "bootstrap_replicates": 1000,
+    "scope": "conditional row sampling; APS seed-averaged; AI4I seed 11 only"
+  }
+]

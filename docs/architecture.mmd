@@ -1,0 +1,16 @@
+flowchart TD
+    A[Training partition only] --> B[Rank measurement groups using training labels]
+    A --> C[Clean training copy]
+    B --> D[Three copies with top-three groups removed individually]
+    C --> E[HGB: balanced log loss, sample weights]
+    D --> E
+    E --> F[Frozen classifier]
+    V[Validation partition] --> W[Clean plus same three outage environments]
+    F --> P[Validation scores]
+    W --> P
+    P --> T[One threshold maximizing equal-environment mean F1]
+    X[Test rows: clean, five group outages, two MCAR rates] --> Y[Same frozen classifier]
+    F --> Y
+    Y --> Z[Scores compared with fixed threshold]
+    T --> Z
+    Z --> O[Fault predictions and held-out evaluation]

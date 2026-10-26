@@ -1,0 +1,20 @@
+[
+  {
+    "file": "ai4i.csv",
+    "url": "https://raw.githubusercontent.com/rockyfjord/predictive-maintenance/789f44a7336f173cea4d4879fb61993db0d42fdf/maintenance.csv",
+    "sha256": "dc6630cd9b1f0f853922fad78a1b6436570d3f1ec863f1dd5c4340ac56bc8a8e",
+    "bytes": 522048
+  },
+  {
+    "file": "aps_train.csv",
+    "url": "https://raw.githubusercontent.com/kev-wes/pdm_scania/4cd68dd63886416e8e60f1330d79ac7f5094ce9a/aps_failure_training_set.csv",
+    "sha256": "b1803b6d1b67104228cf51334b40592b5176ac02d09fcf5a824a8ca3d313c3a8",
+    "bytes": 44608321
+  },
+  {
+    "file": "aps_test.csv",
+    "url": "https://raw.githubusercontent.com/kev-wes/pdm_scania/4cd68dd63886416e8e60f1330d79ac7f5094ce9a/aps_failure_test_set.csv",
+    "sha256": "cfd3e73cd5c7990a22cf97d0695024250e270ec700a070e9ba352f0a58fd1e41",
+    "bytes": 11926685
+  }
+]

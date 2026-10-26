@@ -1,0 +1,283 @@
+[
+  {
+    "key": "muzellec20a",
+    "title": "Missing Data Imputation using Optimal Transport",
+    "year": 2020,
+    "authors": [
+      {
+        "given": "Boris",
+        "family": "Muzellec"
+      },
+      {
+        "given": "Julie",
+        "family": "Josse"
+      },
+      {
+        "given": "Claire",
+        "family": "Boyer"
+      },
+      {
+        "given": "Marco",
+        "family": "Cuturi"
+      }
+    ],
+    "venue": "Proceedings of the 37th International Conference on Machine Learning",
+    "pages": 11,
+    "url": "http://proceedings.mlr.press/v119/muzellec20a.html",
+    "pdf_url": "https://raw.githubusercontent.com/mlresearch/v119/500846bfc432506177d62479931d030063010517/muzellec20a/muzellec20a.pdf",
+    "metadata_url": "https://raw.githubusercontent.com/mlresearch/v119/500846bfc432506177d62479931d030063010517/_posts/2020-11-21-muzellec20a.md",
+    "sha256": "f3124efe11b43618909e30fcbbe6c8d8f1a14437ec6c026c1ed1def6f95f075c",
+    "read_status": "relevant main-text sections reviewed; proofs and all appendices not exhaustively audited"
+  },
+  {
+    "key": "jarrett22a",
+    "title": "HyperImpute: Generalized Iterative Imputation with Automatic Model Selection",
+    "year": 2022,
+    "authors": [
+      {
+        "given": "Daniel",
+        "family": "Jarrett"
+      },
+      {
+        "given": "Bogdan C",
+        "family": "Cebere"
+      },
+      {
+        "given": "Tennison",
+        "family": "Liu"
+      },
+      {
+        "given": "Alicia",
+        "family": "Curth"
+      },
+      {
+        "given": "Mihaela",
+        "family": "Schaar",
+        "prefix": "van der"
+      }
+    ],
+    "venue": "Proceedings of the 39th International Conference on Machine Learning",
+    "pages": 22,
+    "url": null,
+    "pdf_url": "https://raw.githubusercontent.com/mlresearch/v162/76fcebd56ef1c447f7cd66f43333a2a5ff2ecdb2/jarrett22a/jarrett22a.pdf",
+    "metadata_url": "https://raw.githubusercontent.com/mlresearch/v162/76fcebd56ef1c447f7cd66f43333a2a5ff2ecdb2/_posts/2022-06-28-jarrett22a.md",
+    "sha256": "670961b85701ed3156e644de4ce56eea2e0bbfe0ab2da7b8a2d35bba4107c95d",
+    "read_status": "relevant main-text sections reviewed; proofs and all appendices not exhaustively audited"
+  },
+  {
+    "key": "zhou23b",
+    "title": "Domain Adaptation under Missingness Shift",
+    "year": 2023,
+    "authors": [
+      {
+        "given": "Helen",
+        "family": "Zhou"
+      },
+      {
+        "given": "Sivaraman",
+        "family": "Balakrishnan"
+      },
+      {
+        "given": "Zachary",
+        "family": "Lipton"
+      }
+    ],
+    "venue": "PMLR 206",
+    "pages": 30,
+    "url": null,
+    "pdf_url": "https://raw.githubusercontent.com/mlresearch/v206/47436ab452509f15d718e07ea14ec663b867c189/zhou23b/zhou23b.pdf",
+    "metadata_url": "https://raw.githubusercontent.com/mlresearch/v206/47436ab452509f15d718e07ea14ec663b867c189/_posts/2023-04-11-zhou23b.md",
+    "sha256": "7b82eb5125462601d8cd9785dfda6bfc9aa1d4dc5afb81c709c75167adf66bdb",
+    "read_status": "relevant main-text sections reviewed; proofs and all appendices not exhaustively audited"
+  },
+  {
+    "key": "telyatnikov23a",
+    "title": "EGG-GAE: scalable graph neural networks for tabular data imputation",
+    "year": 2023,
+    "authors": [
+      {
+        "given": "Lev",
+        "family": "Telyatnikov"
+      },
+      {
+        "given": "Simone",
+        "family": "Scardapane"
+      }
+    ],
+    "venue": "PMLR 206",
+    "pages": 16,
+    "url": null,
+    "pdf_url": "https://raw.githubusercontent.com/mlresearch/v206/47436ab452509f15d718e07ea14ec663b867c189/telyatnikov23a/telyatnikov23a.pdf",
+    "metadata_url": "https://raw.githubusercontent.com/mlresearch/v206/47436ab452509f15d718e07ea14ec663b867c189/_posts/2023-04-11-telyatnikov23a.md",
+    "sha256": "d6ca41c877c1731ed2f139c47061e10344b1ae96a7c7aebde5b95fefd6d9c13c",
+    "read_status": "relevant main-text sections reviewed; proofs and all appendices not exhaustively audited"
+  },
+  {
+    "key": "stempfle24a",
+    "title": "MINTY: Rule-based models that minimize the need for imputing features with missing values",
+    "year": 2024,
+    "authors": [
+      {
+        "given": "Lena",
+        "family": "Stempfle"
+      },
+      {
+        "given": "Fredrik",
+        "family": "Johansson"
+      }
+    ],
+    "venue": "PMLR 238",
+    "pages": 18,
+    "url": null,
+    "pdf_url": "https://raw.githubusercontent.com/mlresearch/v238/a04b2c2643f374a4aef87a54bdf4829c1bf578b9/stempfle24a/stempfle24a.pdf",
+    "metadata_url": "https://raw.githubusercontent.com/mlresearch/v238/a04b2c2643f374a4aef87a54bdf4829c1bf578b9/_posts/2024-04-18-stempfle24a.md",
+    "sha256": "912560ca1a2377cf18e51dfc92bd81c633e37acb3389ab1614c728177661c7d6",
+    "read_status": "relevant main-text sections reviewed; proofs and all appendices not exhaustively audited"
+  },
+  {
+    "key": "ayme24a",
+    "title": "Random features models: a way to study the success of naive imputation",
+    "year": 2024,
+    "authors": [
+      {
+        "given": "Alexis",
+        "family": "Ayme"
+      },
+      {
+        "given": "Claire",
+        "family": "Boyer"
+      },
+      {
+        "given": "Aymeric",
+        "family": "Dieuleveut"
+      },
+      {
+        "given": "Erwan",
+        "family": "Scornet"
+      }
+    ],
+    "venue": "PMLR 235",
+    "pages": 27,
+    "url": null,
+    "pdf_url": "https://raw.githubusercontent.com/mlresearch/v235/b3316866f6cf6614f8b8f56820972b386eb12133/assets/ayme24a/ayme24a.pdf",
+    "metadata_url": "https://raw.githubusercontent.com/mlresearch/v235/d8ed297cedc9746e50104a7f191c9b6ab039bd70/_posts/2024-07-08-ayme24a.md",
+    "sha256": "1260de090e6d23b56b6a9e5132565228d6460fa515ac9624dad7b59bd955842d",
+    "read_status": "relevant main-text sections reviewed; proofs and all appendices not exhaustively audited"
+  },
+  {
+    "key": "lobo25a",
+    "title": "A primer on linear classification with missing data",
+    "year": 2025,
+    "authors": [
+      {
+        "given": "Angel David REYERO",
+        "family": "LOBO"
+      },
+      {
+        "given": "Alexis",
+        "family": "Ayme"
+      },
+      {
+        "given": "Claire",
+        "family": "Boyer"
+      },
+      {
+        "given": "Erwan",
+        "family": "Scornet"
+      }
+    ],
+    "venue": "PMLR 258",
+    "pages": 51,
+    "url": null,
+    "pdf_url": "https://raw.githubusercontent.com/mlresearch/v258/c23e00567c1db6de38aca40d079840c626aef356/assets/lobo25a/lobo25a.pdf",
+    "metadata_url": "https://raw.githubusercontent.com/mlresearch/v258/c73b09a977d95efcb9f98958babd262361c7ac66/_posts/2025-04-23-lobo25a.md",
+    "sha256": "ef9d49f17042cb3be45abffc545b8c20a5e0d4eb1eaa95c535a0d50d3ab839c5",
+    "read_status": "relevant main-text sections reviewed; proofs and all appendices not exhaustively audited"
+  },
+  {
+    "key": "cheng25e",
+    "title": "TabFSBench: Tabular Benchmark for Feature Shifts in Open Environments",
+    "year": 2025,
+    "authors": [
+      {
+        "given": "Zi-Jian",
+        "family": "Cheng"
+      },
+      {
+        "given": "Ziyi",
+        "family": "Jia"
+      },
+      {
+        "given": "Zhi",
+        "family": "Zhou"
+      },
+      {
+        "given": "Yu-Feng",
+        "family": "Li"
+      },
+      {
+        "given": "Lan-Zhe",
+        "family": "Guo"
+      }
+    ],
+    "venue": "PMLR 267",
+    "pages": 65,
+    "url": null,
+    "pdf_url": "https://raw.githubusercontent.com/mlresearch/v267/7914d3407046b308db90001490534e422dab7d87/assets/cheng25e/cheng25e.pdf",
+    "metadata_url": "https://raw.githubusercontent.com/mlresearch/v267/a0fe86ce92cf44f8fa724ab20e461f6dce1f0338/_posts/2025-10-06-cheng25e.md",
+    "sha256": "f21f2ab3e9cb0db0225f31f8cf6a0cf4ef516a93605cfce59a3c30643e321bb1",
+    "read_status": "relevant main-text sections reviewed; proofs and all appendices not exhaustively audited"
+  },
+  {
+    "key": "stempfle25a",
+    "title": "Prediction models that learn to avoid missing values",
+    "year": 2025,
+    "authors": [
+      {
+        "given": "Lena",
+        "family": "Stempfle"
+      },
+      {
+        "given": "Anton",
+        "family": "Matsson"
+      },
+      {
+        "given": "Newton",
+        "family": "Mwai"
+      },
+      {
+        "given": "Fredrik D.",
+        "family": "Johansson"
+      }
+    ],
+    "venue": "PMLR 267",
+    "pages": 21,
+    "url": null,
+    "pdf_url": "https://raw.githubusercontent.com/mlresearch/v267/7914d3407046b308db90001490534e422dab7d87/assets/stempfle25a/stempfle25a.pdf",
+    "metadata_url": "https://raw.githubusercontent.com/mlresearch/v267/a0fe86ce92cf44f8fa724ab20e461f6dce1f0338/_posts/2025-10-06-stempfle25a.md",
+    "sha256": "33adc0fb3adc2749f89c5abbb418e0b1420f4c3e3f791dcb91595e13160d8cf9",
+    "read_status": "relevant main-text sections reviewed; proofs and all appendices not exhaustively audited"
+  },
+  {
+    "key": "cai25j",
+    "title": "Understanding the Limits of Deep Tabular Methods with Temporal Shift",
+    "year": 2025,
+    "authors": [
+      {
+        "given": "Haorun",
+        "family": "Cai"
+      },
+      {
+        "given": "Han-Jia",
+        "family": "Ye"
+      }
+    ],
+    "venue": "PMLR 267",
+    "pages": 21,
+    "url": null,
+    "pdf_url": "https://raw.githubusercontent.com/mlresearch/v267/7914d3407046b308db90001490534e422dab7d87/assets/cai25j/cai25j.pdf",
+    "metadata_url": "https://raw.githubusercontent.com/mlresearch/v267/a0fe86ce92cf44f8fa724ab20e461f6dce1f0338/_posts/2025-10-06-cai25j.md",
+    "sha256": "b38d7ced6ad41f2246687f6d473ebf7f71922f86037db13de83bfdfe96414644",
+    "read_status": "relevant main-text sections reviewed; proofs and all appendices not exhaustively audited"
+  }
+]

@@ -1,0 +1,706 @@
+{
+  "119": {
+    "booktitle": "Proceedings of the 37th International Conference on Machine Learning",
+    "shortname": "ICML",
+    "year": "2020",
+    "volume": 119,
+    "start": "2020-07-13",
+    "end": "2020-07-18",
+    "published": "2020-11-21",
+    "url": "https://proceedings.mlr.press",
+    "conference_number": "37",
+    "layout": "proceedings",
+    "series": "Proceedings of Machine Learning Research",
+    "publisher": "PMLR",
+    "issn": "2640-3498",
+    "id": "ICML2020",
+    "month": 0,
+    "cycles": false,
+    "bibtex_editor": "III, Hal Daum\\'e and Singh, Aarti",
+    "editor": [
+      {
+        "given": "Hal Daum\u00e9",
+        "family": "III"
+      },
+      {
+        "given": "Aarti",
+        "family": "Singh"
+      }
+    ],
+    "title": "Proceedings of Machine Learning Research",
+    "description": "Proceedings of the 37th International Conference on Machine Learning\n  Held in Virtual on 13-18 July 2020\n\nPublished as Volume 119 by the Proceedings of Machine Learning Research on 21 November 2020.\n\nVolume Edited by:\n  Hal Daum\u00e9 III\n  Aarti Singh\n\nSeries Editors:\n  Neil D. Lawrence\n  Mark Reid\n",
+    "date_str": "13--18 Jul",
+    "author": {
+      "name": "PMLR"
+    },
+    "baseurl": "/v119",
+    "twitter_username": "MLResearchPress",
+    "github_username": "mlresearch",
+    "markdown": "kramdown",
+    "exclude": [
+      "README.md",
+      "Gemfile",
+      ".gitignore"
+    ],
+    "plugins": [
+      "jekyll-feed",
+      "jekyll-seo-tag",
+      "jekyll-remote-theme"
+    ],
+    "remote_theme": "mlresearch/jekyll-theme",
+    "style": "pmlr",
+    "permalink": "/:title.html",
+    "ghub": {
+      "edit": true,
+      "repository": "v119"
+    },
+    "display": {
+      "copy_button": {
+        "bibtex": true,
+        "endnote": true,
+        "apa": true
+      },
+      "comments": false
+    },
+    "email": "",
+    "conference": {
+      "name": "International Conference on Machine Learning",
+      "url": null,
+      "location": "Virtual",
+      "dates": [
+        "2020-07-13",
+        "2020-07-14",
+        "2020-07-15",
+        "2020-07-16",
+        "2020-07-17",
+        "2020-07-18"
+      ]
+    },
+    "analytics": {
+      "google": {
+        "tracking_id": "UA-92432422-1"
+      }
+    },
+    "orig_bibfile": "/Users/neil/mlresearch/v119/icml20.bib"
+  },
+  "162": {
+    "booktitle": "Proceedings of the 39th International Conference on Machine Learning",
+    "shortname": "ICML",
+    "year": "2022",
+    "volume": "162",
+    "start": "2022-07-17",
+    "end": "2022-07-23",
+    "published": "2022-06-28",
+    "conference_number": "39",
+    "layout": "proceedings",
+    "series": "Proceedings of Machine Learning Research",
+    "publisher": "PMLR",
+    "issn": "2640-3498",
+    "id": "ICML2022",
+    "month": 0,
+    "cycles": false,
+    "bibtex_editor": "Chaudhuri, Kamalika and Jegelka, Stefanie and Song, Le and Szepesvari, Csaba and Niu, Gang and Sabato, Sivan",
+    "editor": [
+      {
+        "given": "Kamalika",
+        "family": "Chaudhuri"
+      },
+      {
+        "given": "Stefanie",
+        "family": "Jegelka"
+      },
+      {
+        "given": "Le",
+        "family": "Song"
+      },
+      {
+        "given": "Csaba",
+        "family": "Szepesvari"
+      },
+      {
+        "given": "Gang",
+        "family": "Niu"
+      },
+      {
+        "given": "Sivan",
+        "family": "Sabato"
+      }
+    ],
+    "title": "Proceedings of Machine Learning Research",
+    "description": "Proceedings of the 39th International Conference on Machine Learning\n  Held in Baltimore, Maryland, USA on 17-23 July 2022\n\nPublished as Volume 162 by the Proceedings of Machine Learning Research on 28 June 2022.\n\nVolume Edited by:\n  Kamalika Chaudhuri\n  Stefanie Jegelka\n  Le Song\n  Csaba Szepesvari\n  Gang Niu\n  Sivan Sabato\n\nSeries Editors:\n  Neil D. Lawrence\n",
+    "date_str": "17--23 Jul",
+    "url": "https://proceedings.mlr.press",
+    "author": {
+      "name": "PMLR"
+    },
+    "baseurl": "/v162",
+    "twitter_username": "MLResearchPress",
+    "github_username": "mlresearch",
+    "markdown": "kramdown",
+    "exclude": [
+      "README.md",
+      "Gemfile",
+      ".gitignore"
+    ],
+    "plugins": [
+      "jekyll-feed",
+      "jekyll-seo-tag",
+      "jekyll-remote-theme"
+    ],
+    "remote_theme": "mlresearch/jekyll-theme",
+    "style": "pmlr",
+    "permalink": "/:title.html",
+    "ghub": {
+      "edit": true,
+      "repository": "v162"
+    },
+    "display": {
+      "copy_button": {
+        "bibtex": true,
+        "endnote": true,
+        "apa": true
+      },
+      "comments": false
+    },
+    "volume_type": "Volume",
+    "volume_dir": "v162",
+    "email": "",
+    "conference": {
+      "name": "International Conference on Machine Learning",
+      "url": "https://icml.cc/Conferences/2022/",
+      "location": "Baltimore, Maryland, USA",
+      "dates": [
+        "2022-07-17",
+        "2022-07-18",
+        "2022-07-19",
+        "2022-07-20",
+        "2022-07-21",
+        "2022-07-22",
+        "2022-07-23"
+      ]
+    },
+    "analytics": {
+      "google": {
+        "tracking_id": "UA-92432422-1"
+      }
+    },
+    "orig_bibfile": "/Users/neil/mlresearch/v162/pmlr162_bibtex_20220706.bib"
+  },
+  "206": {
+    "booktitle": "Proceedings of The 26th International Conference on Artificial Intelligence and Statistics",
+    "shortname": "AISTATS",
+    "volume": "206",
+    "year": "2023",
+    "start": "2023-04-25",
+    "end": "2023-04-27",
+    "published": "2023-04-11",
+    "location": "Valencia, Spain",
+    "conference_number": "26",
+    "sections": [
+      {
+        "name": "Notable Papers",
+        "title": "Notable Papers"
+      },
+      {
+        "name": "Regular Papers",
+        "title": "Regular Papers"
+      }
+    ],
+    "layout": "proceedings",
+    "series": "Proceedings of Machine Learning Research",
+    "publisher": "PMLR",
+    "issn": "2640-3498",
+    "id": "AISTATS-2023",
+    "month": 0,
+    "cycles": false,
+    "bibtex_editor": "Ruiz, Francisco and Dy, Jennifer and van de Meent, Jan-Willem",
+    "editor": [
+      {
+        "given": "Francisco",
+        "family": "Ruiz"
+      },
+      {
+        "given": "Jennifer",
+        "family": "Dy"
+      },
+      {
+        "given": "Jan-Willem",
+        "family": "Meent",
+        "prefix": "van de"
+      }
+    ],
+    "title": "Proceedings of Machine Learning Research",
+    "description": "Proceedings of The 26th International Conference on Artificial Intelligence and Statistics\n  Held in Palau de Congressos, Valencia, Spain on 25-27 April 2023\n\nPublished as Volume 206 by the Proceedings of Machine Learning Research on 11 April 2023.\n\nVolume Edited by:\n  Francisco Ruiz\n  Jennifer Dy\n  Jan-Willem van de Meent\n\nSeries Editors:\n  Neil D. Lawrence\n",
+    "date_str": "25--27 Apr",
+    "url": "https://proceedings.mlr.press",
+    "author": {
+      "name": "PMLR"
+    },
+    "baseurl": "/v206",
+    "twitter_username": "MLResearchPress",
+    "github_username": "mlresearch",
+    "markdown": "kramdown",
+    "exclude": [
+      "README.md",
+      "Gemfile",
+      ".gitignore"
+    ],
+    "plugins": [
+      "jekyll-feed",
+      "jekyll-seo-tag",
+      "jekyll-remote-theme"
+    ],
+    "remote_theme": "mlresearch/jekyll-theme",
+    "style": "pmlr",
+    "permalink": "/:title.html",
+    "ghub": {
+      "edit": true,
+      "repository": "v206"
+    },
+    "display": {
+      "copy_button": {
+        "bibtex": true,
+        "endnote": true,
+        "apa": true
+      },
+      "comments": false
+    },
+    "volume_type": "Volume",
+    "volume_dir": "v206",
+    "email": "",
+    "conference": {
+      "name": "International Conference on Artificial Intelligence and Statistics",
+      "url": "http://aistats.org/aistats2023/",
+      "location": "Palau de Congressos, Valencia, Spain",
+      "dates": [
+        "2023-04-25",
+        "2023-04-26",
+        "2023-04-27"
+      ]
+    },
+    "analytics": {
+      "google": {
+        "tracking_id": "UA-92432422-1"
+      }
+    },
+    "orig_bibfile": "/Users/neil/mlresearch/v206/aistats23.bib"
+  },
+  "238": {
+    "booktitle": "Proceedings of The 27th International Conference on Artificial Intelligence and Statistics",
+    "shortname": "AISTATS",
+    "volume": "238",
+    "year": "2024",
+    "start": "2024-05-02",
+    "end": "2024-05-04",
+    "location": "Valencia, Spain",
+    "published": "2024-04-18",
+    "conference_number": "27",
+    "layout": "proceedings",
+    "series": "Proceedings of Machine Learning Research",
+    "publisher": "PMLR",
+    "issn": "2640-3498",
+    "id": "AISTATS-2024",
+    "month": 0,
+    "cycles": false,
+    "bibtex_editor": "Dasgupta, Sanjoy and Mandt, Stephan and Li, Yingzhen",
+    "editor": [
+      {
+        "given": "Sanjoy",
+        "family": "Dasgupta"
+      },
+      {
+        "given": "Stephan",
+        "family": "Mandt"
+      },
+      {
+        "given": "Yingzhen",
+        "family": "Li"
+      }
+    ],
+    "title": "Proceedings of Machine Learning Research",
+    "description": "Proceedings of The 27th International Conference on Artificial Intelligence and Statistics\n  Held in Palau de Congressos, Valencia, Spain on 02-04 May 2024\n\nPublished as Volume 238 by the Proceedings of Machine Learning Research on 18 April 2024.\n\nVolume Edited by:\n  Sanjoy Dasgupta\n  Stephan Mandt\n  Yingzhen Li\n\nSeries Editors:\n  Neil D. Lawrence\n",
+    "date_str": "02--04 May",
+    "url": "https://proceedings.mlr.press",
+    "author": {
+      "name": "PMLR"
+    },
+    "baseurl": "/v238",
+    "twitter_username": "MLResearchPress",
+    "github_username": "mlresearch",
+    "markdown": "kramdown",
+    "exclude": [
+      "README.md",
+      "Gemfile",
+      ".gitignore"
+    ],
+    "plugins": [
+      "jekyll-feed",
+      "jekyll-seo-tag",
+      "jekyll-remote-theme"
+    ],
+    "remote_theme": "mlresearch/jekyll-theme",
+    "style": "pmlr",
+    "permalink": "/:title.html",
+    "ghub": {
+      "edit": true,
+      "repository": "v238"
+    },
+    "display": {
+      "copy_button": {
+        "bibtex": true,
+        "endnote": true,
+        "apa": true
+      },
+      "comments": false
+    },
+    "volume_type": "Volume",
+    "volume_dir": "v238",
+    "email": "",
+    "conference": {
+      "name": "International Conference on Artificial Intelligence and Statistics",
+      "url": "http://aistats.org/aistats2024/",
+      "location": "Palau de Congressos, Valencia, Spain",
+      "dates": [
+        "2024-05-02",
+        "2024-05-03",
+        "2024-05-04"
+      ]
+    },
+    "analytics": {
+      "google": {
+        "tracking_id": "UA-92432422-1"
+      }
+    },
+    "orig_bibfile": "/Users/neil/mlresearch/v238/aistats24.bib"
+  },
+  "235": {
+    "booktitle": "Proceedings of the 41st International Conference on Machine Learning",
+    "shortname": "ICML",
+    "volume": "235",
+    "year": "2024",
+    "start": "2024-07-21",
+    "end": "2024-07-27",
+    "published": "2024-07-08",
+    "conference_number": "41",
+    "layout": "proceedings",
+    "series": "Proceedings of Machine Learning Research",
+    "publisher": "PMLR",
+    "issn": "2640-3498",
+    "id": "ICML-2024",
+    "month": 0,
+    "cycles": false,
+    "bibtex_editor": "Salakhutdinov, Ruslan and Kolter, Zico and Heller, Katherine and Weller, Adrian and Oliver, Nuria and Scarlett, Jonathan and Berkenkamp, Felix",
+    "editor": [
+      {
+        "given": "Ruslan",
+        "family": "Salakhutdinov"
+      },
+      {
+        "given": "Zico",
+        "family": "Kolter"
+      },
+      {
+        "given": "Katherine",
+        "family": "Heller"
+      },
+      {
+        "given": "Adrian",
+        "family": "Weller"
+      },
+      {
+        "given": "Nuria",
+        "family": "Oliver"
+      },
+      {
+        "given": "Jonathan",
+        "family": "Scarlett"
+      },
+      {
+        "given": "Felix",
+        "family": "Berkenkamp"
+      }
+    ],
+    "title": "Proceedings of Machine Learning Research",
+    "description": "Proceedings of the 41st International Conference on Machine Learning\n  Held in Vienna, Austria on 21-27 July 2024\n\nPublished as Volume 235 by the Proceedings of Machine Learning Research on 08 July 2024.\n\nVolume Edited by:\n  Ruslan Salakhutdinov\n  Zico Kolter\n  Katherine Heller\n  Adrian Weller\n  Nuria Oliver\n  Jonathan Scarlett\n  Felix Berkenkamp\n\nSeries Editors:\n  Neil D. Lawrence\n",
+    "date_str": "21--27 Jul",
+    "url": "https://proceedings.mlr.press",
+    "author": {
+      "name": "PMLR"
+    },
+    "baseurl": "/v235",
+    "twitter_username": "MLResearchPress",
+    "github_username": "mlresearch",
+    "markdown": "kramdown",
+    "exclude": [
+      "README.md",
+      "Gemfile",
+      ".gitignore"
+    ],
+    "plugins": [
+      "jekyll-feed",
+      "jekyll-seo-tag",
+      "jekyll-remote-theme"
+    ],
+    "remote_theme": "mlresearch/jekyll-theme",
+    "style": "pmlr",
+    "permalink": "/:title.html",
+    "ghub": {
+      "edit": true,
+      "repository": "v235"
+    },
+    "display": {
+      "copy_button": {
+        "bibtex": true,
+        "endnote": true,
+        "apa": true
+      },
+      "comments": false
+    },
+    "volume_type": "Volume",
+    "volume_dir": "v235",
+    "email": "",
+    "conference": {
+      "name": "International Conference on Machine Learning",
+      "url": "https://icml.cc/Conferences/2024",
+      "location": "Vienna, Austria",
+      "dates": [
+        "2024-07-21",
+        "2024-07-22",
+        "2024-07-23",
+        "2024-07-24",
+        "2024-07-25",
+        "2024-07-26",
+        "2024-07-27"
+      ]
+    },
+    "analytics": {
+      "google": {
+        "tracking_id": "UA-92432422-1"
+      }
+    },
+    "orig_bibfile": "/Users/neil/mlresearch/v235/icml24.bib"
+  },
+  "258": {
+    "booktitle": "Proceedings of The 28th International Conference on Artificial Intelligence and Statistics",
+    "shortname": "AISTATS",
+    "volume": "258",
+    "year": "2025",
+    "start": "2025-05-03",
+    "end": "2025-05-05",
+    "published": "2025-04-23",
+    "location": "Mai Khao, Thailand",
+    "conference_number": "28",
+    "layout": "proceedings",
+    "series": "Proceedings of Machine Learning Research",
+    "publisher": "PMLR",
+    "issn": "2640-3498",
+    "id": "AISTATS-2025",
+    "month": 0,
+    "cycles": false,
+    "bibtex_editor": "Li, Yingzhen and Mandt, Stephan and Agrawal, Shipra and Khan, Emtiyaz",
+    "editor": [
+      {
+        "given": "Yingzhen",
+        "family": "Li"
+      },
+      {
+        "given": "Stephan",
+        "family": "Mandt"
+      },
+      {
+        "given": "Shipra",
+        "family": "Agrawal"
+      },
+      {
+        "given": "Emtiyaz",
+        "family": "Khan"
+      }
+    ],
+    "title": "Proceedings of Machine Learning Research",
+    "description": "Proceedings of The 28th International Conference on Artificial Intelligence and Statistics\n  Held in Splash Beach Resort in Mai Khao, Thailand on 03-05 May 2025\n\nPublished as Volume 258 by the Proceedings of Machine Learning Research on 23 April 2025.\n\nVolume Edited by:\n  Yingzhen Li\n  Stephan Mandt\n  Shipra Agrawal\n  Emtiyaz Khan\n\nSeries Editors:\n  Neil D. Lawrence\n",
+    "date_str": "03--05 May",
+    "url": "https://proceedings.mlr.press",
+    "author": {
+      "name": "PMLR"
+    },
+    "baseurl": "/v258",
+    "twitter_username": "MLResearchPress",
+    "github_username": "mlresearch",
+    "markdown": "kramdown",
+    "exclude": [
+      "README.md",
+      "Gemfile",
+      ".gitignore"
+    ],
+    "plugins": [
+      "jekyll-feed",
+      "jekyll-seo-tag",
+      "jekyll-remote-theme"
+    ],
+    "remote_theme": "mlresearch/jekyll-theme",
+    "style": "pmlr",
+    "permalink": "/:title.html",
+    "ghub": {
+      "edit": true,
+      "repository": "v258"
+    },
+    "display": {
+      "copy_button": {
+        "bibtex": true,
+        "endnote": true,
+        "apa": true
+      },
+      "comments": false
+    },
+    "volume_type": "Volume",
+    "volume_dir": "v258",
+    "email": "",
+    "conference": {
+      "name": "International Conference on Artificial Intelligence and Statistics",
+      "url": "http://aistats.org/aistats2025/",
+      "location": "Splash Beach Resort in Mai Khao, Thailand",
+      "dates": [
+        "2025-05-03",
+        "2025-05-04",
+        "2025-05-05"
+      ]
+    },
+    "analytics": {
+      "google": {
+        "tracking_id": "UA-92432422-1"
+      }
+    },
+    "link_visibility": {
+      "openreview": true,
+      "pdf": true,
+      "supplementary": true,
+      "software": true,
+      "video": true,
+      "arxiv": true,
+      "doi": true,
+      "website": true
+    },
+    "orig_bibfile": "/Users/neil/mlresearch/v258/aistats25.bib"
+  },
+  "267": {
+    "booktitle": "Proceedings of the 42nd International Conference on Machine Learning",
+    "shortname": "ICML",
+    "volume": "267",
+    "year": "2025",
+    "start": "2025-07-13",
+    "end": "2025-07-19",
+    "published": "2025-10-06",
+    "conference_number": "42",
+    "layout": "proceedings",
+    "series": "Proceedings of Machine Learning Research",
+    "publisher": "PMLR",
+    "issn": "2640-3498",
+    "id": "ICML-2025",
+    "month": 0,
+    "cycles": false,
+    "bibtex_editor": "Singh, Aarti and Fazel, Maryam and Hsu, Daniel and Lacoste-Julien, Simon and Berkenkamp, Felix and Maharaj, Tegan and Wagstaff, Kiri and Zhu, Jerry",
+    "editor": [
+      {
+        "given": "Aarti",
+        "family": "Singh"
+      },
+      {
+        "given": "Maryam",
+        "family": "Fazel"
+      },
+      {
+        "given": "Daniel",
+        "family": "Hsu"
+      },
+      {
+        "given": "Simon",
+        "family": "Lacoste-Julien"
+      },
+      {
+        "given": "Felix",
+        "family": "Berkenkamp"
+      },
+      {
+        "given": "Tegan",
+        "family": "Maharaj"
+      },
+      {
+        "given": "Kiri",
+        "family": "Wagstaff"
+      },
+      {
+        "given": "Jerry",
+        "family": "Zhu"
+      }
+    ],
+    "title": "Proceedings of Machine Learning Research",
+    "description": "Proceedings of the 42nd International Conference on Machine Learning\n  Held in Vancouver Convention Center, Vancouver, Canada on 13-19 July 2025\n\nPublished as Volume 267 by the Proceedings of Machine Learning Research on 06 October 2025.\n\nVolume Edited by:\n  Aarti Singh\n  Maryam Fazel\n  Daniel Hsu\n  Simon Lacoste-Julien\n  Felix Berkenkamp\n  Tegan Maharaj\n  Kiri Wagstaff\n  Jerry Zhu\n\nSeries Editors:\n  Neil D. Lawrence\n",
+    "date_str": "13--19 Jul",
+    "url": "https://proceedings.mlr.press",
+    "author": {
+      "name": "PMLR"
+    },
+    "baseurl": "/v267",
+    "twitter_username": "MLResearchPress",
+    "github_username": "mlresearch",
+    "markdown": "kramdown",
+    "exclude": [
+      "README.md",
+      "Gemfile",
+      ".gitignore"
+    ],
+    "plugins": [
+      "jekyll-feed",
+      "jekyll-seo-tag",
+      "jekyll-remote-theme"
+    ],
+    "remote_theme": "mlresearch/jekyll-theme",
+    "style": "pmlr",
+    "permalink": "/:title.html",
+    "ghub": {
+      "edit": true,
+      "repository": "v267"
+    },
+    "display": {
+      "copy_button": {
+        "bibtex": true,
+        "endnote": true,
+        "apa": true
+      },
+      "comments": false
+    },
+    "volume_type": "Volume",
+    "volume_dir": "v267",
+    "email": "",
+    "conference": {
+      "name": "International Conference on Machine Learning",
+      "url": "https://icml.cc/Conferences/2025",
+      "location": "Vancouver Convention Center, Vancouver, Canada",
+      "dates": [
+        "2025-07-13",
+        "2025-07-14",
+        "2025-07-15",
+        "2025-07-16",
+        "2025-07-17",
+        "2025-07-18",
+        "2025-07-19"
+      ]
+    },
+    "analytics": {
+      "google": {
+        "tracking_id": "UA-92432422-1"
+      }
+    },
+    "link_visibility": {
+      "openreview": true,
+      "pdf": true,
+      "supplementary": true,
+      "software": true,
+      "video": true,
+      "arxiv": true,
+      "doi": true,
+      "website": true
+    },
+    "orig_bibfile": "icml25_cleaned_clean.bib"
+  }
+}

@@ -1,0 +1,56 @@
+[
+  {
+    "dataset": "aps",
+    "comparison": "[('group_hgb', 'environment'), ('hgb', 'clean')]",
+    "estimate": 0.007623243360496246,
+    "lower": -0.000993654853217099,
+    "upper": 0.016562384910668825,
+    "bootstrap_replicates": 1000,
+    "scope": "conditional row sampling; APS seed-averaged; AI4I seed 11 only"
+  },
+  {
+    "dataset": "aps",
+    "comparison": "[('group_hgb', 'environment'), ('cell_hgb', 'environment')]",
+    "estimate": 0.004269244465927691,
+    "lower": -0.004965453517627477,
+    "upper": 0.01319952632905718,
+    "bootstrap_replicates": 1000,
+    "scope": "conditional row sampling; APS seed-averaged; AI4I seed 11 only"
+  },
+  {
+    "dataset": "aps",
+    "comparison": "[('group_hgb', 'environment'), ('group_hgb', 'clean')]",
+    "estimate": 0.0,
+    "lower": 0.0,
+    "upper": 0.0,
+    "bootstrap_replicates": 1000,
+    "scope": "conditional row sampling; APS seed-averaged; AI4I seed 11 only"
+  },
+  {
+    "dataset": "ai4i",
+    "comparison": "[('group_hgb', 'environment'), ('hgb', 'clean')]",
+    "estimate": 0.08008626633733906,
+    "lower": 0.017800718825021187,
+    "upper": 0.14447374611143748,
+    "bootstrap_replicates": 1000,
+    "scope": "conditional row sampling; APS seed-averaged; AI4I seed 11 only"
+  },
+  {
+    "dataset": "ai4i",
+    "comparison": "[('group_hgb', 'environment'), ('cell_hgb', 'environment')]",
+    "estimate": 0.02413762277716547,
+    "lower": -0.013220593345596358,
+    "upper": 0.0650330607867576,
+    "bootstrap_replicates": 1000,
+    "scope": "conditional row sampling; APS seed-averaged; AI4I seed 11 only"
+  },
+  {
+    "dataset": "ai4i",
+    "comparison": "[('group_hgb', 'environment'), ('group_hgb', 'clean')]",
+    "estimate": -0.002966662800375608,
+    "lower": -0.026078170233356596,
+    "upper": 0.024982208552768108,
+    "bootstrap_replicates": 1000,
+    "scope": "conditional row sampling; APS seed-averaged; AI4I seed 11 only"
+  }
+]

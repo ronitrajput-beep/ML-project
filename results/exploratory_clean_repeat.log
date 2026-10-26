@@ -1,0 +1,14 @@
+DONE aps 11 9.121173758998339
+DONE aps 29 8.60506192399771
+DONE aps 47 8.903523197004688
+DONE ai4i 11 0.2067180699959863
+DONE ai4i 29 0.20680590799747733
+DONE ai4i 47 0.21209600700240117
+                         mean       std
+dataset policy                         
+ai4i    clean        0.603769  0.104404
+        default      0.568492  0.097656
+        environment  0.613620  0.109940
+aps     clean        0.830171  0.011880
+        default      0.775260  0.011179
+        environment  0.836517  0.006501
